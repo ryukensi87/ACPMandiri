@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -28,7 +27,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
 
     _model.emailAddressController ??= TextEditingController();
     _model.passwordController ??= TextEditingController();
-    _model.confirmPasswordController ??= TextEditingController();
   }
 
   @override
@@ -229,105 +227,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
-                      child: TextFormField(
-                        controller: _model.confirmPasswordController,
-                        obscureText: !_model.confirmPasswordVisibility,
-                        decoration: InputDecoration(
-                          labelText: 'Confirm Password',
-                          labelStyle: FlutterFlowTheme.of(context).bodyMedium,
-                          hintText: 'Confirm Password',
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1.0,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1.0,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1.0,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1.0,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          suffixIcon: InkWell(
-                            onTap: () => setState(
-                              () => _model.confirmPasswordVisibility =
-                                  !_model.confirmPasswordVisibility,
-                            ),
-                            focusNode: FocusNode(skipTraversal: true),
-                            child: Icon(
-                              _model.confirmPasswordVisibility
-                                  ? Icons.visibility_outlined
-                                  : Icons.visibility_off_outlined,
-                              color: FlutterFlowTheme.of(context).grayDark,
-                              size: 24.0,
-                            ),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.of(context).tertiary,
-                            ),
-                        validator: _model.confirmPasswordControllerValidator
-                            .asValidator(context),
-                      ),
-                    ),
-                  ),
-                ),
                 FFButtonWidget(
                   onPressed: () async {
                     GoRouter.of(context).prepareAuthEvent();
-                    if (_model.passwordController.text !=
-                        _model.confirmPasswordController.text) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Passwords don\'t match!',
-                          ),
-                        ),
-                      );
-                      return;
-                    }
 
                     final user = await authManager.createAccountWithEmail(
                       context,
@@ -338,17 +240,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       return;
                     }
 
-                    await UsersRecord.collection
-                        .doc(user.uid)
-                        .update(createUsersRecordData(
-                          email: '',
-                          password: '',
-                        ));
-
-                    if (Navigator.of(context).canPop()) {
-                      context.pop();
-                    }
-                    context.pushNamedAuth('SigninPage', context.mounted);
+                    context.goNamedAuth('Register', context.mounted);
                   },
                   text: 'Create Account',
                   options: FFButtonOptions(

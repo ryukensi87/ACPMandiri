@@ -1,9 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -265,8 +263,7 @@ class _SigninPageWidgetState extends State<SigninPageWidget> {
                               return;
                             }
 
-                            context.pushNamedAuth(
-                                'dasboard_home', context.mounted);
+                            context.goNamedAuth('Register', context.mounted);
                           },
                           text: 'Login',
                           options: FFButtonOptions(
@@ -325,13 +322,6 @@ class _SigninPageWidgetState extends State<SigninPageWidget> {
                             if (user == null) {
                               return;
                             }
-
-                            await currentUserReference!
-                                .update(createUsersRecordData(
-                              displayName: 'Friend',
-                              isGuest: true,
-                              userRole: 'Geek Master',
-                            ));
 
                             context.pushNamedAuth(
                               'dasboard_home',
