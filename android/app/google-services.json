@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "269221690859",
+    "firebase_url": "https://acpmandiri-d4b5e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "acpmandiri-d4b5e",
+    "storage_bucket": "acpmandiri-d4b5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269221690859:android:5c05af759186d2828a6dae",
+        "android_client_info": {
+          "package_name": "acpmandiri.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269221690859-divult5cvqqmelehhc9q0npod094dadb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "acpmandiri.app",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "269221690859-oqttnkq5tdnbnpqhk64nc397v5l86rqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Y1Fu6gtF6lYbk7TclBDc1mPNIxVx6cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269221690859-oqttnkq5tdnbnpqhk64nc397v5l86rqd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "269221690859-a23ljvnjrnj9aiqrdd3v64e8vb3d9huq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kaleo.chat.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269221690859:android:2a52348ecd24709c8a6dae",
+        "android_client_info": {
+          "package_name": "kaleo.chat.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269221690859-oqttnkq5tdnbnpqhk64nc397v5l86rqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Y1Fu6gtF6lYbk7TclBDc1mPNIxVx6cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269221690859-oqttnkq5tdnbnpqhk64nc397v5l86rqd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "269221690859-a23ljvnjrnj9aiqrdd3v64e8vb3d9huq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kaleo.chat.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
